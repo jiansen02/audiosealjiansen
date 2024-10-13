@@ -141,7 +141,9 @@ class AudioSealWM(torch.nn.Module):
         if sample_rate is None:
             logger.warning(COMPATIBLE_WARNING)
             sample_rate = 16_000
+        print("hi")
         wm = self.get_watermark(x, sample_rate=sample_rate, message=message)
+        
         return x + alpha * wm
 
 
